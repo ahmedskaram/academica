@@ -1,10 +1,15 @@
 from django.db import models
 
-BATCH_CHOICES = [
+YEAR_CHOICES = [
     ('year1', 'الفرقة الأولى'),
     ('year2', 'الفرقة الثانية'),
     ('year3', 'الفرقة الثالثة'),
     ('year4', 'الفرقة الرابعة'),
+]
+
+TERM_CHOICES = [
+    (1, 'الترم الأول'),
+    (2, 'الترم الثاني'),
 ]
 
 class Book(models.Model):
@@ -13,7 +18,10 @@ class Book(models.Model):
     description = models.TextField(null=True, blank=True)
     publication_date = models.DateField(null=True, blank=True)
     pdf_file = models.FileField(upload_to='books/pdfs/', null=True, blank=True)
-    batch = models.CharField(max_length=10, choices=BATCH_CHOICES, default='year1')
+    year = models.CharField(max_length=10, choices=YEAR_CHOICES, default='year1')
+    term = models.IntegerField(choices=TERM_CHOICES, default=1)
+    is_available = models.BooleanField(default=True, verbose_name='available?')
+
 
     def __str__(self):
         return self.title

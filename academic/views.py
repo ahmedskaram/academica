@@ -7,27 +7,53 @@ def home(request):
 
 #####################################################################################################
 
-
+# First semester
 from django.shortcuts import render, redirect
 from .models import Book
 
 def year1(request):
-    books = Book.objects.filter(batch='year1')
+    books = Book.objects.filter(year='year1', term=1)
     context = {'books': books}
     return render(request, 'academic/year1.html', context)
 
 def year2(request):
-    books = Book.objects.filter(batch='year2')
+    books = Book.objects.filter(year='year2', term=1)
     context = {'books': books}
     return render(request, 'academic/year2.html', context)
 
 def year3(request):
-    books = Book.objects.filter(batch='year3')
+    books = Book.objects.filter(year='year3', term=1)
     context = {'books': books}
     return render(request, 'academic/year3.html', context)
 
 def year4(request):
-    books = Book.objects.filter(batch='year4')
+    books = Book.objects.filter(year='year4', term=1)
+    context = {'books': books}
+    return render(request, 'academic/year4.html', context)
+
+#####################################################################################################
+
+# Second semester
+from django.shortcuts import render, redirect
+from .models import Book
+
+def year1(request):
+    books = Book.objects.filter(year='year1', term=2)
+    context = {'books': books}
+    return render(request, 'academic/year1.html', context)
+
+def year2(request):
+    books = Book.objects.filter(year='year2', term=2)
+    context = {'books': books}
+    return render(request, 'academic/year2.html', context)
+
+def year3(request):
+    books = Book.objects.filter(year='year3', term=2)
+    context = {'books': books}
+    return render(request, 'academic/year3.html', context)
+
+def year4(request):
+    books = Book.objects.filter(year='year4', term=2)
     context = {'books': books}
     return render(request, 'academic/year4.html', context)
 
