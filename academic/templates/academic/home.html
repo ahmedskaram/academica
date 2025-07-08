@@ -497,10 +497,14 @@
             <ul>
                 <li><a href="{% url 'academic:home' %}"><i class="fas fa-home"></i> الصفحة الرئيسية</a></li>
                 <li><a href="{% url 'academic:books_list' %}"><i class="fas fa-book"></i> قائمة الكتب المتاحة</a></li>
-                <li><a href="{% url 'academic:year1' %}"><i class="fas fa-graduation-cap"></i> فرقة أولى</a></li>
-                <li><a href="{% url 'academic:year2' %}"><i class="fas fa-graduation-cap"></i> فرقة ثانية</a></li>
-                <li><a href="{% url 'academic:year3' %}"><i class="fas fa-graduation-cap"></i> فرقة ثالثة</a></li>
-                <li><a href="{% url 'academic:year4' %}"><i class="fas fa-graduation-cap"></i> فرقة رابعة</a></li>
+                <li><a href="{% url 'academic:year1' 'year1' 1 %}"><i class="fas fa-graduation-cap"></i>فرقة أولي _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year1' 'year1' 2 %}"><i class="fas fa-graduation-cap"></i>فرقة أولي _ ترم تاني</a></li>
+                <li><a href="{% url 'academic:year2' 'year2' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة ثانية _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year2' 'year2' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة ثانية _ ترم ثاني</a></li>
+                <li><a href="{% url 'academic:year3' 'year3' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة ثالثة _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year3' 'year3' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة ثالثة _ ترم ثاني</a></li>
+                <li><a href="{% url 'academic:year4' 'year4' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة رابعة _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year4' 'year4' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة رابعة _ ترم ثاني</a></li>
                 <li><a href="{% url 'academic:college_links' %}"><i class="fas fa-link"></i> روابط الكلية</a></li>
             </ul>
         </div>
@@ -519,27 +523,44 @@
 
         <section class="quick-links">
             <div class="quick-link-card">
-                <h3>فرقة أولى</h3>
-                <a href="{% url 'academic:year1' %}">عرض الكتب</a>
+                <h3>فرقة أولي _ ترم أول</h3>
+                <a href="{% url 'academic:year1' 'year1' 1 %}">عرض الكتب</a>
             </div>
             <div class="quick-link-card">
-                <h3>فرقة ثانية</h3>
-                <a href="{% url 'academic:year2' %}">عرض الكتب</a>
+                <h3>فرقة أولي _ ترم ثاني</h3>
+                <a href="{% url 'academic:year1' 'year1' 2 %}">عرض الكتب</a>
             </div>
             <div class="quick-link-card">
-                <h3>فرقة ثالثة</h3>
-                <a href="{% url 'academic:year3' %}">عرض الكتب</a>
+                <h3>فرقة ثانية_ ترم أول</h3>
+                <a href="{% url 'academic:year2' 'year2' 1 %}">عرض الكتب</a>
+            </div>
+                        <div class="quick-link-card">
+                <h3>فرقة ثانية_ ترم ثاني</h3>
+                <a href="{% url 'academic:year2' 'year2' 2 %}">عرض الكتب</a>
             </div>
             <div class="quick-link-card">
-                <h3>فرقة رابعة</h3>
-                <a href="{% url 'academic:year4' %}">عرض الكتب</a>
+                <h3>فرقة ثالثة_ ترم أول</h3>
+                <a href="{% url 'academic:year3' 'year3' 1 %}">عرض الكتب</a>
+            </div>
+                        <div class="quick-link-card">
+                <h3>فرقة ثالثة_ ترم ثاني</h3>
+                <a href="{% url 'academic:year3' 'year3' 2 %}">عرض الكتب</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>فرقة رابعة _ ترم أول</h3>
+                <a href="{% url 'academic:year4' 'year4' 1 %}">عرض الكتب</a>
+            </div>
+                        </div>
+            <div class="quick-link-card">
+                <h3>فرقة رابعة _ ترم ثاني</h3>
+                <a href="{% url 'academic:year4' 'year4' 2 %}">عرض الكتب</a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 <a href="https://www.facebook.com/share/1BhQoTLxFP/" target="_blank">Ahmed Karam</a>. جميع الحقوق محفوظة.</p>
+        <p>© 2025 <a href="https://www.facebook.com/share/1BhQoTLxFP/" target="_blank">Ahmed Karam</a>.All rights reserved.</p>
         <div class="social-links">
             <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>

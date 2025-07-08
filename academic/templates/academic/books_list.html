@@ -355,13 +355,17 @@
     <nav class="sidebar">
         <div class="sidebar-content">
             <ul>
-                <li><a href="{% url 'academic:home' %}">الصفحة الرئيسية</a></li>
-                <li><a href="{% url 'academic:books_list' %}">قائمة الكتب المتاحة</a></li>
-                <li><a href="{% url 'academic:year1' %}">فرقة أولى</a></li>
-                <li><a href="{% url 'academic:year2' %}">فرقة ثانية</a></li>
-                <li><a href="{% url 'academic:year3' %}">فرقة ثالثة</a></li>
-                <li><a href="{% url 'academic:year4' %}">فرقة رابعة</a></li>
-                <li><a href="{% url 'academic:college_links' %}">روابط الكلية</a></li>
+                <li><a href="{% url 'academic:home' %}"><i class="fas fa-home"></i> الصفحة الرئيسية</a></li>
+                <li><a href="{% url 'academic:books_list' %}"><i class="fas fa-book"></i> قائمة الكتب المتاحة</a></li>
+                <li><a href="{% url 'academic:year1' 'year1' 1 %}"><i class="fas fa-graduation-cap"></i>فرقة أولي _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year1' 'year1' 2 %}"><i class="fas fa-graduation-cap"></i>فرقة أولي _ ترم تاني</a></li>
+                <li><a href="{% url 'academic:year2' 'year2' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة ثانية _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year2' 'year2' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة ثانية _ ترم ثاني</a></li>
+                <li><a href="{% url 'academic:year3' 'year3' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة ثالثة _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year3' 'year3' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة ثالثة _ ترم ثاني</a></li>
+                <li><a href="{% url 'academic:year4' 'year4' 1 %}"><i class="fas fa-graduation-cap"></i> فرقة رابعة _ ترم أول</a></li>
+                <li><a href="{% url 'academic:year4' 'year4' 2 %}"><i class="fas fa-graduation-cap"></i> فرقة رابعة _ ترم ثاني</a></li>
+                <li><a href="{% url 'academic:college_links' %}"><i class="fas fa-link"></i> روابط الكلية</a></li>
             </ul>
         </div>
     </nav>
@@ -398,7 +402,7 @@
                             <td><a href="{% url 'academic:book_detail' book.pk %}">{{ book.title }}</a></td>
                             <td>{{ book.author }}</td>
                             <td>{{ book.publication_date|date:"Y" }}</td>
-                            <td>{{ book.batch }}</td>
+                            <td>{{ book.year }}</td>
                             <td>
                                 {% if book.pdf_file %}
                                     <a href="{{ book.pdf_file.url }}" target="_blank">قراءة أونلاين</a>
@@ -416,7 +420,7 @@
     </main>
 
     <footer>
-        <p>© 2025 <a href="https://www.facebook.com/share/1BhQoTLxFP/" target="_blank">Ahmed Karam</a>. جميع الحقوق محفوظة.</p>
+        <p>© 2025 <a href="https://www.facebook.com/share/1BhQoTLxFP/" target="_blank">Ahmed Karam</a>.All rights reserved.</p>
     </footer>
 
     <script>

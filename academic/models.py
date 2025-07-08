@@ -1,5 +1,7 @@
 from django.db import models
 
+#####################################################################################################
+
 YEAR_CHOICES = [
     ('year1', 'الفرقة الأولى'),
     ('year2', 'الفرقة الثانية'),
@@ -11,6 +13,7 @@ TERM_CHOICES = [
     (1, 'الترم الأول'),
     (2, 'الترم الثاني'),
 ]
+#####################################################################################################
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
@@ -22,9 +25,12 @@ class Book(models.Model):
     term = models.IntegerField(choices=TERM_CHOICES, default=1)
     is_available = models.BooleanField(default=True, verbose_name='available?')
 
+#####################################################################################################
 
     def __str__(self):
         return self.title
 
     class Meta:
         indexes = [models.Index(fields=['title'])]
+
+#####################################################################################################
